@@ -26,8 +26,8 @@ public class Topico {
     private String autor;
     @Enumerated(EnumType.STRING)
     private Curso curso;
+    @Enumerated(EnumType.STRING)
     private Estatus estatus;
-
 
     public Topico(@Valid DatosRegistroTopico datos) {
         this.id = null;
@@ -39,3 +39,4 @@ public class Topico {
         this.estatus = datos.estatus() ;
     }
 }
+
