@@ -1,13 +1,15 @@
 package com.example.ForoHub.Consulta;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+
 public record DatosRegistroTopico(
-        Long id,
-        String titulo,
-        String mensaje,
+       @NotBlank String titulo,
+       @NotBlank String mensaje,
         String fechaCreacion,
-        String status,
+       @NotNull Estatus estatus,
         String autor,
-        String curso,
-        String respuesta
+       @NotNull Curso curso
 ) {
 }
