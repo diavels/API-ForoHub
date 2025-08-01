@@ -25,7 +25,9 @@ public class ForoController {
         topicoRepository.save(new Topico(datos));
     }
 
-
-
-
+    @GetMapping
+    public Page <Topico> mostrarTodo (@PageableDefault (size = 10) Pageable page) {
+        return TopicoRepository.findall(page)
+            .map(DatosTopico::new);
 }
+
